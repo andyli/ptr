@@ -1,0 +1,6 @@
+-js bin/Test.js
+-main Test
+-cp src
+-cp test
+-dce full
+-cmd node bin/Test.js
