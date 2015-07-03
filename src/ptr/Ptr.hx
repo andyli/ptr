@@ -40,6 +40,11 @@ abstract Ptr<T>(IPtr<T>) from IPtr<T> {
 	#end
 }
 
+class NativeArrayPtrTools {
+	inline static public function ptr<T>(a:NativeArrayPtr.NativeArray<T>):Ptr<T>
+		return new NativeArrayPtr(a, 0);
+}
+
 class ArrayPtrTools {
 	inline static public function ptr<T>(a:Array<T>):Ptr<T>
 		return new ArrayPtr(a, 0);

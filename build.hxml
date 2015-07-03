@@ -1,6 +1,55 @@
+-java bin/java
+-main Test
+-cp src
+-cp test
+-dce full
+-cmd java -jar bin/java/Test.jar
+
+
+--next
+
+-cs bin/cs
+-main Test
+-cp src
+-cp test
+-dce full
+-cmd mono bin/cs/bin/Test.exe
+
+
+--next
+
+-cpp bin/cpp
+-main Test
+-cp src
+-cp test
+-dce full
+-cmd ./bin/cpp/Test
+
+--next
+
 -js bin/Test.js
 -main Test
 -cp src
 -cp test
 -dce full
 -cmd node bin/Test.js
+
+
+--next
+
+-php bin/php
+-main Test
+-cp src
+-cp test
+-dce full
+-cmd php bin/php/index.php
+
+
+--next
+
+-neko bin/Test.n
+-main Test
+-cp src
+-cp test
+-dce full
+-cmd neko bin/Test.n
