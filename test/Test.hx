@@ -1,5 +1,6 @@
 import haxe.unit.*;
-using ptr.Ptr;
+import ptr.Ptr;
+using ptr.Tools;
 
 class Test extends TestCase {
 	function testGet():Void {
