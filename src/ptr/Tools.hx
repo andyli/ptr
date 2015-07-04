@@ -1,5 +1,10 @@
 package ptr;
 
+class ObjPtrTools {
+	inline static public function ptr<T>(o:T):Ptr<T>
+		return new ObjPtr(o);
+}
+
 class NativeArrayPtrTools {
 	inline static public function ptr<T>(a:NativeArrayPtr.NativeArray<T>):Ptr<T>
 		return new NativeArrayPtr(a, 0);
