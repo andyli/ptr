@@ -5,10 +5,10 @@ class Test {
 		var runner = new TestRunner();
 		runner.add(new TestArray());
 		runner.add(new TestObj());
-		#if !java
+		#if !java //https://github.com/HaxeFoundation/haxe/issues/4203
 		runner.add(new TestBytes());
 		#end
-		#if !java //https://github.com/HaxeFoundation/haxe/issues/4382
+		#if !java //https://github.com/HaxeFoundation/haxe/issues/3965
 		runner.add(new TestVector());
 		#end
 		if (!runner.run()) {
