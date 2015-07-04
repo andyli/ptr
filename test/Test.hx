@@ -4,6 +4,7 @@ class Test {
 	static function main():Void {
 		var runner = new TestRunner();
 		runner.add(new TestArray());
+		runner.add(new TestObj());
 		#if !java
 		runner.add(new TestBytes());
 		#end

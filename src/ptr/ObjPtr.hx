@@ -1,19 +1,22 @@
 package ptr;
 
 class ObjPtr<T> implements IPtr<T> {
-	var o:T;
-	public function new(o:T):Void {
-		this.o = o;
+	var _get(default, null):Void->T;
+	var _set(default, null):T->T;
+
+	public function new(_get:Void->T, _set:T->T):Void {
+		this._get = _get;
+		this._set = _set;
 	}
 	public function get(i:Int):T {
 		return if (i == 0)
-			o;
+			_get();
 		else
 			throw "out of bound access";
 	}
 	public function set(i:Int, v:T):T {
 		return if (i == 0)
-			o = v;
+			_set(v);
 		else
 			throw "out of bound access";
 	}
@@ -42,6 +45,6 @@ class ObjPtr<T> implements IPtr<T> {
 		throw "ObjPtr cannot be inc/dec.";
 	}
 	inline public function copy():ObjPtr<T> {
-		return new ObjPtr(o);
+		return new ObjPtr(_get, _set);
 	}
 }

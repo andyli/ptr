@@ -1,6 +1,9 @@
 package ptr;
 
 abstract Ptr<T>(IPtr<T>) from IPtr<T> {
+	inline static public function fromIPtr<T>(p:IPtr<T>):Ptr<T>
+		return p;
+
 	@:arrayAccess inline function get(i:Int):T {
 		return this.get(i);
 	}
