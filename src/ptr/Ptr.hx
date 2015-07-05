@@ -4,10 +4,10 @@ abstract Ptr<T>(IPtr<T>) from IPtr<T> {
 	inline static public function fromIPtr<T>(p:IPtr<T>):Ptr<T>
 		return p;
 
-	@:arrayAccess inline function get(i:Int):T {
+	@:arrayAccess #if !php inline #end function get(i:Int):T {
 		return this.get(i);
 	}
-	@:arrayAccess inline function set(i:Int, v:T):T {
+	@:arrayAccess #if !php inline #end function set(i:Int, v:T):T {
 		return this.set(i, v);
 	}
 
