@@ -1,5 +1,7 @@
 # ptr
 
+[![Build Status](https://travis-ci.org/andyli/ptr.svg?branch=master)](https://travis-ci.org/andyli/ptr)
+
 C-style pointer emulation in pure Haxe, for easy porting of C/C++ code base to Haxe.
 
 Let's make it clear: This is just a wrapper around `Array`/`haxe.ds.Vector`/`haxe.io.Bytes`, to provide a pointer-like interface, such that we can easily translate C/C++ code to Haxe.
