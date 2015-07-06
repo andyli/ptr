@@ -1,7 +1,6 @@
 package ptr;
 
-interface IPtr<T> {
-	public function get(i:Int):T;
+interface IPtr<T> extends IConstPtr<T> {
 	public function set(i:Int, v:T):T;
 	public function add(i:Int):IPtr<T>;
 	public function sub(i:Int):IPtr<T>;

@@ -7,6 +7,10 @@ import haxe.macro.Expr;
 
 class ObjPtrTools {
 	macro static public function objPtr<T>(o:ExprOf<T>):ExprOf<Ptr<T>> {
+		// var te = Context.typeExpr(o);
+		// trace(TypedExprTools.toString(te));
+		// var e = Context.getTypedExpr(te);
+		// trace(ExprTools.toString(e), o.pos);
 		var e = try {
 			Context.typeExpr(
 				macro ptr.Ptr.fromIPtr(new ptr.ObjPtr(
@@ -24,19 +28,27 @@ class ObjPtrTools {
 class NativeArrayPtrTools {
 	inline static public function ptr<T>(a:NativeArrayPtr.NativeArray<T>, i:Int = 0):Ptr<T>
 		return new NativeArrayPtr(a, i);
+	inline static public function constPtr<T>(a:NativeArrayPtr.NativeArray<T>, i:Int = 0):ConstPtr<T>
+		return new NativeArrayPtr(a, i);
 }
 
 class ArrayPtrTools {
 	inline static public function ptr<T>(a:Array<T>, i:Int = 0):Ptr<T>
+		return new ArrayPtr(a, i);
+	inline static public function constPtr<T>(a:Array<T>, i:Int = 0):ConstPtr<T>
 		return new ArrayPtr(a, i);
 }
 
 class VectorPtrTools {
 	inline static public function ptr<T>(a:haxe.ds.Vector<T>, i:Int = 0):Ptr<T>
 		return new VectorPtr(a, i);
+	inline static public function constPtr<T>(a:haxe.ds.Vector<T>, i:Int = 0):ConstPtr<T>
+		return new VectorPtr(a, i);
 }
 
 class BytesPtrTools {
 	inline static public function ptr(a:haxe.io.Bytes, i:Int = 0):Ptr<Int>
+		return new BytesPtr(a, i);
+	inline static public function constPtr(a:haxe.io.Bytes, i:Int = 0):ConstPtr<Int>
 		return new BytesPtr(a, i);
 }
