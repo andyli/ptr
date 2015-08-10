@@ -24,3 +24,4 @@ install:
 
 script:
   - haxe build.hxml
+  - haxe build.hxml -D ptr-no-out-of-bounds

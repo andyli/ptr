@@ -8,6 +8,10 @@ class BytesPtr implements IPtr<Int> {
 	public function new(a:Bytes, i:Int):Void {
 		this.a = a;
 		this.base_i = i;
+		#if ptr_no_out_of_bounds
+			if (base_i < 0 || base_i >= a.length)
+				throw "out of bound";
+		#end
 	}
 	public function get(i:Int):Int {
 		return if (i >= 0 && i < a.length)
@@ -29,19 +33,35 @@ class BytesPtr implements IPtr<Int> {
 		return new BytesPtr(a, base_i - i);
 	}
 	public function preInc():BytesPtr {
+		#if ptr_no_out_of_bounds
+			if (base_i+1 >= a.length)
+				throw "out of bound";
+		#end
 		base_i++;
 		return this;
 	}
 	public function postInc():BytesPtr {
+		#if ptr_no_out_of_bounds
+			if (base_i+1 >= a.length)
+				throw "out of bound";
+		#end
 		var cur = copy();
 		base_i++;
 		return cur;
 	}
 	public function preDec():BytesPtr {
+		#if ptr_no_out_of_bounds
+			if (base_i-1 < 0)
+				throw "out of bound";
+		#end
 		base_i--;
 		return this;
 	}
 	public function postDec():BytesPtr {
+		#if ptr_no_out_of_bounds
+			if (base_i-1 < 0)
+				throw "out of bound";
+		#end
 		var cur = copy();
 		base_i--;
 		return cur;

@@ -4,7 +4,7 @@ class Test {
 	static function main():Void {
 		var runner = new TestRunner();
 		runner.add(new TestArray());
-		runner.add(new TestObj());
+		// runner.add(new TestObj());
 		#if !java //https://github.com/HaxeFoundation/haxe/issues/4203
 		runner.add(new TestBytes());
 		#end

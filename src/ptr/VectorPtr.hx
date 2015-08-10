@@ -8,6 +8,10 @@ class VectorPtr<T> implements IPtr<T> {
 	public function new(a:Vector<T>, i:Int):Void {
 		this.a = a;
 		this.base_i = i;
+		#if ptr_no_out_of_bounds
+			if (base_i < 0 || base_i >= a.length)
+				throw "out of bound";
+		#end
 	}
 	public function get(i:Int):T {
 		return if (i >= 0 && i < a.length)
@@ -28,19 +32,35 @@ class VectorPtr<T> implements IPtr<T> {
 		return new VectorPtr<T>(a, base_i - i);
 	}
 	public function preInc():VectorPtr<T> {
+		#if ptr_no_out_of_bounds
+			if (base_i+1 >= a.length)
+				throw "out of bound";
+		#end
 		base_i++;
 		return this;
 	}
 	public function postInc():VectorPtr<T> {
+		#if ptr_no_out_of_bounds
+			if (base_i+1 >= a.length)
+				throw "out of bound";
+		#end
 		var cur = copy();
 		base_i++;
 		return cur;
 	}
 	public function preDec():VectorPtr<T> {
+		#if ptr_no_out_of_bounds
+			if (base_i-1 < 0)
+				throw "out of bound";
+		#end
 		base_i--;
 		return this;
 	}
 	public function postDec():VectorPtr<T> {
+		#if ptr_no_out_of_bounds
+			if (base_i-1 < 0)
+				throw "out of bound";
+		#end
 		var cur = copy();
 		base_i--;
 		return cur;

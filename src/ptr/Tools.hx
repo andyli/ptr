@@ -5,6 +5,7 @@ import haxe.macro.*;
 import haxe.macro.Expr;
 #end
 
+#if false // not sure if its design and its implementation are good...
 class ObjPtrTools {
 	macro static public function objPtr<T>(o:ExprOf<T>):ExprOf<Ptr<T>> {
 		// var te = Context.typeExpr(o);
@@ -24,6 +25,7 @@ class ObjPtrTools {
 		return Context.storeTypedExpr(e);
 	}
 }
+#end
 
 class NativeArrayPtrTools {
 	inline static public function ptr<T>(a:NativeArrayPtr.NativeArray<T>, i:Int = 0):Ptr<T>

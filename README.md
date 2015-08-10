@@ -46,7 +46,7 @@ class Test {
     p--;                 // point to the previous element
     trace(p[0]);         // 123
     
-    // it is fine to point to an unexisting element
+    // it is fine to point to an unexisting element, unless `-D ptr-no-out-of-bounds`
     var badP = p + 100;  // no run-time error
     // ... as long as we don't dereference the unexisting element
     // badP[0]           // run-time error

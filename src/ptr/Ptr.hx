@@ -44,4 +44,7 @@ abstract Ptr<T>(IPtr<T>) from IPtr<T> {
 		@:op(A--) inline function postDec():Ptr<T>
 			return this.postDec();
 	#end
+
+	inline public function copy():Ptr<T>
+		return this.copy();
 }
