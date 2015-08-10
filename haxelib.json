@@ -1,0 +1,12 @@
+{
+  "name": "ptr",
+  "url" : "https://github.com/andyli/ptr",
+  "license": "MIT",
+  "tags": ["cross", "pointer", "C", "C++"],
+  "description": "C-style pointer emulation in pure Haxe, for easy porting of C/C++ code base to Haxe.",
+  "version": "0.1.0",
+  "releasenote": "Initial release.",
+  "contributors": ["andyli"],
+  "classPath": "src",
+  "dependencies": {}
+}
