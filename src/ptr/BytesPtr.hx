@@ -69,4 +69,39 @@ class BytesPtr implements IPtr<Int> {
 	inline public function copy():BytesPtr {
 		return new BytesPtr(a, base_i);
 	}
+	inline public function lt(p:IPtr<Int>):Bool {
+		var p = Std.instance(p, BytesPtr);
+		return if (p == null || this.a != p.a)
+			throw "cannot compare pointers to different array";
+		else
+			this.base_i < p.base_i;
+	}
+	inline public function lte(p:IPtr<Int>):Bool {
+		var p = Std.instance(p, BytesPtr);
+		return if (p == null || this.a != p.a)
+			throw "cannot compare pointers to different array";
+		else
+			this.base_i <= p.base_i;
+	}
+	inline public function gt(p:IPtr<Int>):Bool {
+		var p = Std.instance(p, BytesPtr);
+		return if (p == null || this.a != p.a)
+			throw "cannot compare pointers to different array";
+		else
+			this.base_i > p.base_i;
+	}
+	inline public function gte(p:IPtr<Int>):Bool {
+		var p = Std.instance(p, BytesPtr);
+		return if (p == null || this.a != p.a)
+			throw "cannot compare pointers to different array";
+		else
+			this.base_i >= p.base_i;
+	}
+	inline public function eq(p:IPtr<Int>):Bool {
+		var p = Std.instance(p, BytesPtr);
+		return if (p == null || this.a != p.a)
+			throw "cannot compare pointers to different array";
+		else
+			this.base_i == p.base_i;
+	}
 }

@@ -66,4 +66,39 @@ class ArrayPtr<T> implements IPtr<T> {
 	inline public function copy():ArrayPtr<T> {
 		return new ArrayPtr(a, base_i);
 	}
+	inline public function lt(p:IPtr<T>):Bool {
+		var p = Std.instance(p, ArrayPtr);
+		return if (p == null || this.a != p.a)
+			throw "cannot compare pointers to different array";
+		else
+			this.base_i < p.base_i;
+	}
+	inline public function lte(p:IPtr<T>):Bool {
+		var p = Std.instance(p, ArrayPtr);
+		return if (p == null || this.a != p.a)
+			throw "cannot compare pointers to different array";
+		else
+			this.base_i <= p.base_i;
+	}
+	inline public function gt(p:IPtr<T>):Bool {
+		var p = Std.instance(p, ArrayPtr);
+		return if (p == null || this.a != p.a)
+			throw "cannot compare pointers to different array";
+		else
+			this.base_i > p.base_i;
+	}
+	inline public function gte(p:IPtr<T>):Bool {
+		var p = Std.instance(p, ArrayPtr);
+		return if (p == null || this.a != p.a)
+			throw "cannot compare pointers to different array";
+		else
+			this.base_i >= p.base_i;
+	}
+	inline public function eq(p:IPtr<T>):Bool {
+		var p = Std.instance(p, ArrayPtr);
+		return if (p == null || this.a != p.a)
+			throw "cannot compare pointers to different array";
+		else
+			this.base_i == p.base_i;
+	}
 }

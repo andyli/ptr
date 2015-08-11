@@ -1,6 +1,6 @@
 package ptr;
 
-abstract Ptr<T>(IPtr<T>) from IPtr<T> {
+abstract Ptr<T>(IPtr<T>) from IPtr<T> to IPtr<T> {
 	inline static public function fromIPtr<T>(p:IPtr<T>):Ptr<T>
 		return p;
 
@@ -47,4 +47,15 @@ abstract Ptr<T>(IPtr<T>) from IPtr<T> {
 
 	inline public function copy():Ptr<T>
 		return this.copy();
+
+	@:op(A < B) inline function lt(p:Ptr<T>):Bool
+		return this.lt(p);
+	@:op(A <= B) inline function lte(p:Ptr<T>):Bool
+		return this.lt(p);
+	@:op(A > B) inline function gt(p:Ptr<T>):Bool
+		return this.gt(p);
+	@:op(A >= B) inline function gte(p:Ptr<T>):Bool
+		return this.gt(p);
+	@:op(A == B) inline function eq(p:Ptr<T>):Bool
+		return this.eq(p);
 }

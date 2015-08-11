@@ -134,4 +134,12 @@ class TestBase extends TestCase {
 			} catch(e:Dynamic) true);
 		#end
 	}
+
+	function testCompare():Void {
+		assertTrue(aPtr < aPtr + 1);
+		assertTrue(aPtr <= aPtr + 1);
+		assertTrue(aPtr + 1 > aPtr);
+		assertTrue(aPtr + 1 >= aPtr);
+		assertTrue(aPtr == aPtr.copy());
+	}
 }
