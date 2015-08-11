@@ -54,3 +54,45 @@ class BytesPtrTools {
 	inline static public function constPtr(a:haxe.io.Bytes, i:Int = 0):ConstPtr<Int>
 		return new BytesPtr(a, i);
 }
+
+class UInt8ArrayPtrTools {
+	inline static public function ptr(a:haxe.io.UInt8Array, i:Int = 0):Ptr<Int>
+		return new UInt8ArrayPtr(a, i);
+	inline static public function constPtr(a:haxe.io.UInt8Array, i:Int = 0):ConstPtr<Int>
+		return new UInt8ArrayPtr(a, i);
+}
+
+class UInt16ArrayPtrTools {
+	inline static public function ptr(a:haxe.io.UInt16Array, i:Int = 0):Ptr<Int>
+		return new UInt16ArrayPtr(a, i);
+	inline static public function constPtr(a:haxe.io.UInt16Array, i:Int = 0):ConstPtr<Int>
+		return new UInt16ArrayPtr(a, i);
+}
+
+class UInt32ArrayPtrTools {
+	inline static public function ptr(a:haxe.io.UInt32Array, i:Int = 0):Ptr<UInt>
+		return new UInt32ArrayPtr(a, i);
+	inline static public function constPtr(a:haxe.io.UInt32Array, i:Int = 0):ConstPtr<UInt>
+		return new UInt32ArrayPtr(a, i);
+}
+
+class Int32ArrayPtrTools {
+	inline static public function ptr(a:haxe.io.Int32Array, i:Int = 0):Ptr<Int>
+		return new Int32ArrayPtr(a, i);
+	inline static public function constPtr(a:haxe.io.Int32Array, i:Int = 0):ConstPtr<Int>
+		return new Int32ArrayPtr(a, i);
+}
+
+class Float32ArrayPtrTools {
+	inline static public function ptr(a:haxe.io.Float32Array, i:Int = 0):Ptr<Float>
+		return new Float32ArrayPtr(a, i);
+	inline static public function constPtr(a:haxe.io.Float32Array, i:Int = 0):ConstPtr<Float>
+		return new Float32ArrayPtr(a, i);
+}
+
+class Float64ArrayPtrTools {
+	inline static public function ptr(a:haxe.io.Float64Array, i:Int = 0):Ptr<Float>
+		return new Float64ArrayPtr(a, i);
+	inline static public function constPtr(a:haxe.io.Float64Array, i:Int = 0):ConstPtr<Float>
+		return new Float64ArrayPtr(a, i);
+}

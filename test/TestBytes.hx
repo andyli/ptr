@@ -3,8 +3,12 @@ import haxe.unit.*;
 import ptr.Ptr;
 using ptr.Tools;
 
-class TestBytes extends TestBase {
+class TestBytes extends TestBase<Int> {
 	var a:Bytes;
+	override function get(i:Int)
+		return a.get(i);
+	override function len()
+		return a.length;
 
 	override function setup():Void {
 		super.setup();
