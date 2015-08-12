@@ -9,9 +9,4 @@ interface IPtr<T> extends IConstPtr<T> {
 	public function preDec():IPtr<T>;
 	public function postDec():IPtr<T>;
 	public function copy():IPtr<T>;
-	public function lt(p:IPtr<T>):Bool;
-	public function lte(p:IPtr<T>):Bool;
-	public function gt(p:IPtr<T>):Bool;
-	public function gte(p:IPtr<T>):Bool;
-	public function eq(p:IPtr<T>):Bool;
 }

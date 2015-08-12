@@ -9,4 +9,9 @@ interface IConstPtr<T> {
 	public function preDec():IConstPtr<T>;
 	public function postDec():IConstPtr<T>;
 	public function copy():IConstPtr<T>;
+	public function lt(p:IConstPtr<T>):Bool;
+	public function lte(p:IConstPtr<T>):Bool;
+	public function gt(p:IConstPtr<T>):Bool;
+	public function gte(p:IConstPtr<T>):Bool;
+	public function eq(p:IConstPtr<T>):Bool;
 }

@@ -68,35 +68,35 @@ class Float32ArrayPtr implements IPtr<Float> {
 	inline public function copy():Float32ArrayPtr {
 		return new Float32ArrayPtr(a, base_i);
 	}
-	inline public function lt(p:IPtr<Float>):Bool {
+	inline public function lt(p:IConstPtr<Float>):Bool {
 		var p = Std.instance(p, Float32ArrayPtr);
 		return if (p == null || this.a != p.a)
 			throw "cannot compare pointers to different array";
 		else
 			this.base_i < p.base_i;
 	}
-	inline public function lte(p:IPtr<Float>):Bool {
+	inline public function lte(p:IConstPtr<Float>):Bool {
 		var p = Std.instance(p, Float32ArrayPtr);
 		return if (p == null || this.a != p.a)
 			throw "cannot compare pointers to different array";
 		else
 			this.base_i <= p.base_i;
 	}
-	inline public function gt(p:IPtr<Float>):Bool {
+	inline public function gt(p:IConstPtr<Float>):Bool {
 		var p = Std.instance(p, Float32ArrayPtr);
 		return if (p == null || this.a != p.a)
 			throw "cannot compare pointers to different array";
 		else
 			this.base_i > p.base_i;
 	}
-	inline public function gte(p:IPtr<Float>):Bool {
+	inline public function gte(p:IConstPtr<Float>):Bool {
 		var p = Std.instance(p, Float32ArrayPtr);
 		return if (p == null || this.a != p.a)
 			throw "cannot compare pointers to different array";
 		else
 			this.base_i >= p.base_i;
 	}
-	inline public function eq(p:IPtr<Float>):Bool {
+	inline public function eq(p:IConstPtr<Float>):Bool {
 		var p = Std.instance(p, Float32ArrayPtr);
 		return if (p == null || this.a != p.a)
 			throw "cannot compare pointers to different array";

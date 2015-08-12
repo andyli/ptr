@@ -142,5 +142,7 @@ class TestBase<T> extends TestCase {
 		assertTrue(aPtr + 1 > aPtr);
 		assertTrue(aPtr + 1 >= aPtr);
 		assertTrue(aPtr == aPtr.copy());
+		assertTrue(aPtr <= aPtr.copy());
+		assertTrue(aPtr >= aPtr.copy());
 	}
 }

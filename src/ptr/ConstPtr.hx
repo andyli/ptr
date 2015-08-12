@@ -1,6 +1,6 @@
 package ptr;
 
-abstract ConstPtr<T>(IConstPtr<T>) from IConstPtr<T> {
+abstract ConstPtr<T>(IConstPtr<T>) from IConstPtr<T> to IConstPtr<T> {
 	inline static public function fromIConstPtr<T>(p:IConstPtr<T>):ConstPtr<T>
 		return p;
 
@@ -38,4 +38,18 @@ abstract ConstPtr<T>(IConstPtr<T>) from IConstPtr<T> {
 		@:op(A--) inline function postDec():ConstPtr<T>
 			return this.postDec();
 	#end
+
+	inline public function copy():ConstPtr<T>
+		return this.copy();
+
+	@:op(A < B) inline function lt(p:ConstPtr<T>):Bool
+		return this.lt(p);
+	@:op(A <= B) inline function lte(p:ConstPtr<T>):Bool
+		return this.lte(p);
+	@:op(A > B) inline function gt(p:ConstPtr<T>):Bool
+		return this.gt(p);
+	@:op(A >= B) inline function gte(p:ConstPtr<T>):Bool
+		return this.gte(p);
+	@:op(A == B) inline function eq(p:ConstPtr<T>):Bool
+		return this.eq(p);
 }

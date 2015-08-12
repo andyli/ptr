@@ -68,35 +68,35 @@ class UInt32ArrayPtr implements IPtr<UInt> {
 	inline public function copy():UInt32ArrayPtr {
 		return new UInt32ArrayPtr(a, base_i);
 	}
-	inline public function lt(p:IPtr<UInt>):Bool {
+	inline public function lt(p:IConstPtr<UInt>):Bool {
 		var p = Std.instance(p, UInt32ArrayPtr);
 		return if (p == null || this.a != p.a)
 			throw "cannot compare pointers to different array";
 		else
 			this.base_i < p.base_i;
 	}
-	inline public function lte(p:IPtr<UInt>):Bool {
+	inline public function lte(p:IConstPtr<UInt>):Bool {
 		var p = Std.instance(p, UInt32ArrayPtr);
 		return if (p == null || this.a != p.a)
 			throw "cannot compare pointers to different array";
 		else
 			this.base_i <= p.base_i;
 	}
-	inline public function gt(p:IPtr<UInt>):Bool {
+	inline public function gt(p:IConstPtr<UInt>):Bool {
 		var p = Std.instance(p, UInt32ArrayPtr);
 		return if (p == null || this.a != p.a)
 			throw "cannot compare pointers to different array";
 		else
 			this.base_i > p.base_i;
 	}
-	inline public function gte(p:IPtr<UInt>):Bool {
+	inline public function gte(p:IConstPtr<UInt>):Bool {
 		var p = Std.instance(p, UInt32ArrayPtr);
 		return if (p == null || this.a != p.a)
 			throw "cannot compare pointers to different array";
 		else
 			this.base_i >= p.base_i;
 	}
-	inline public function eq(p:IPtr<UInt>):Bool {
+	inline public function eq(p:IConstPtr<UInt>):Bool {
 		var p = Std.instance(p, UInt32ArrayPtr);
 		return if (p == null || this.a != p.a)
 			throw "cannot compare pointers to different array";

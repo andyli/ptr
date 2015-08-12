@@ -68,35 +68,35 @@ class VectorPtr<T> implements IPtr<T> {
 	inline public function copy():VectorPtr<T> {
 		return new VectorPtr(a, base_i);
 	}
-	inline public function lt(p:IPtr<T>):Bool {
+	inline public function lt(p:IConstPtr<T>):Bool {
 		var p = Std.instance(p, VectorPtr);
 		return if (p == null || this.a != p.a)
 			throw "cannot compare pointers to different array";
 		else
 			this.base_i < p.base_i;
 	}
-	inline public function lte(p:IPtr<T>):Bool {
+	inline public function lte(p:IConstPtr<T>):Bool {
 		var p = Std.instance(p, VectorPtr);
 		return if (p == null || this.a != p.a)
 			throw "cannot compare pointers to different array";
 		else
 			this.base_i <= p.base_i;
 	}
-	inline public function gt(p:IPtr<T>):Bool {
+	inline public function gt(p:IConstPtr<T>):Bool {
 		var p = Std.instance(p, VectorPtr);
 		return if (p == null || this.a != p.a)
 			throw "cannot compare pointers to different array";
 		else
 			this.base_i > p.base_i;
 	}
-	inline public function gte(p:IPtr<T>):Bool {
+	inline public function gte(p:IConstPtr<T>):Bool {
 		var p = Std.instance(p, VectorPtr);
 		return if (p == null || this.a != p.a)
 			throw "cannot compare pointers to different array";
 		else
 			this.base_i >=p.base_i;
 	}
-	inline public function eq(p:IPtr<T>):Bool {
+	inline public function eq(p:IConstPtr<T>):Bool {
 		var p = Std.instance(p, VectorPtr);
 		return if (p == null || this.a != p.a)
 			throw "cannot compare pointers to different array";

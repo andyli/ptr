@@ -51,11 +51,11 @@ abstract Ptr<T>(IPtr<T>) from IPtr<T> to IPtr<T> {
 	@:op(A < B) inline function lt(p:Ptr<T>):Bool
 		return this.lt(p);
 	@:op(A <= B) inline function lte(p:Ptr<T>):Bool
-		return this.lt(p);
+		return this.lte(p);
 	@:op(A > B) inline function gt(p:Ptr<T>):Bool
 		return this.gt(p);
 	@:op(A >= B) inline function gte(p:Ptr<T>):Bool
-		return this.gt(p);
+		return this.gte(p);
 	@:op(A == B) inline function eq(p:Ptr<T>):Bool
 		return this.eq(p);
 }
