@@ -101,4 +101,11 @@ class ArrayPtr<T> implements IPtr<T> {
 		else
 			this.base_i == p.base_i;
 	}
+	inline public function subPtr(p:IConstPtr<T>):Int {
+		var p = Std.instance(p, ArrayPtr);
+		return if (p == null || this.a != p.a)
+			throw "cannot compare pointers to different array";
+		else
+			this.base_i - p.base_i;
+	}
 }

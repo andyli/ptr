@@ -103,4 +103,11 @@ class UInt8ArrayPtr implements IPtr<Int> {
 		else
 			this.base_i == p.base_i;
 	}
+	inline public function subPtr(p:IConstPtr<Int>):Int {
+		var p = Std.instance(p, UInt8ArrayPtr);
+		return if (p == null || this.a != p.a)
+			throw "cannot compare pointers to different array";
+		else
+			this.base_i - p.base_i;
+	}
 }

@@ -58,4 +58,6 @@ abstract Ptr<T>(IPtr<T>) from IPtr<T> to IPtr<T> {
 		return this.gte(p);
 	@:op(A == B) inline function eq(p:Ptr<T>):Bool
 		return this.eq(p);
+	@:op(A - B) inline function subPtr(p:Ptr<T>):Int
+		return this.subPtr(p);
 }

@@ -145,4 +145,8 @@ class TestBase<T> extends TestCase {
 		assertTrue(aPtr <= aPtr.copy());
 		assertTrue(aPtr >= aPtr.copy());
 	}
+
+	function testSubPtr():Void {
+		assertEquals(1, aPtr + 1 - aPtr);
+	}
 }

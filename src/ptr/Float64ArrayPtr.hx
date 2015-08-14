@@ -103,4 +103,11 @@ class Float64ArrayPtr implements IPtr<Float> {
 		else
 			this.base_i == p.base_i;
 	}
+	inline public function subPtr(p:IConstPtr<Float>):Int {
+		var p = Std.instance(p, Float64ArrayPtr);
+		return if (p == null || this.a != p.a)
+			throw "cannot compare pointers to different array";
+		else
+			this.base_i - p.base_i;
+	}
 }

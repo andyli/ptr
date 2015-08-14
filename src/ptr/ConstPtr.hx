@@ -52,4 +52,6 @@ abstract ConstPtr<T>(IConstPtr<T>) from IConstPtr<T> to IConstPtr<T> {
 		return this.gte(p);
 	@:op(A == B) inline function eq(p:ConstPtr<T>):Bool
 		return this.eq(p);
+	@:op(A - B) inline function subPtr(p:ConstPtr<T>):Int
+		return this.subPtr(p);
 }

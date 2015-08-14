@@ -14,4 +14,5 @@ interface IConstPtr<T> {
 	public function gt(p:IConstPtr<T>):Bool;
 	public function gte(p:IConstPtr<T>):Bool;
 	public function eq(p:IConstPtr<T>):Bool;
+	public function subPtr(p:IConstPtr<T>):Int;
 }

@@ -104,4 +104,11 @@ class BytesPtr implements IPtr<Int> {
 		else
 			this.base_i == p.base_i;
 	}
+	inline public function subPtr(p:IConstPtr<Int>):Int {
+		var p = Std.instance(p, BytesPtr);
+		return if (p == null || this.a != p.a)
+			throw "cannot compare pointers to different array";
+		else
+			this.base_i - p.base_i;
+	}
 }
