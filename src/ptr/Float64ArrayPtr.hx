@@ -14,16 +14,10 @@ class Float64ArrayPtr implements IPtr<Float> {
 		#end
 	}
 	public function get(i:Int):Float {
-		return if (i >= 0 && i < a.length)
-			a[base_i + i];
-		else
-			throw "out of bound access";
+		return a[Utils.safe(base_i + i, 0, a.length)];
 	}
 	public function set(i:Int, v:Float):Float {
-		return if (i >= 0 && i < a.length)
-			a[base_i + i] = v;
-		else
-			throw "out of bound access";
+		return a[Utils.safe(base_i + i, 0, a.length)] = v;
 	}
 	public function add(i:Int):Float64ArrayPtr {
 		return new Float64ArrayPtr(a, base_i + i);

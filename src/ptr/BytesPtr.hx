@@ -14,17 +14,11 @@ class BytesPtr implements IPtr<Int> {
 		#end
 	}
 	public function get(i:Int):Int {
-		return if (i >= 0 && i < a.length)
-			a.get(base_i + i);
-		else
-			throw "out of bound access";
+		return a.get(Utils.safe(base_i + i, 0, a.length));
 	}
 	public function set(i:Int, v:Int):Int {
-		return if (i >= 0 && i < a.length) {
-			a.set(base_i + i, v);
-			v;
-		} else
-			throw "out of bound access";
+		a.set(Utils.safe(base_i + i, 0, a.length), v);
+		return v;
 	}
 	public function add(i:Int):BytesPtr {
 		return new BytesPtr(a, base_i + i);

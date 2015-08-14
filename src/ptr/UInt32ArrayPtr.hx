@@ -14,16 +14,10 @@ class UInt32ArrayPtr implements IPtr<UInt> {
 		#end
 	}
 	public function get(i:Int):UInt {
-		return if (i >= 0 && i < a.length)
-			a[base_i + i];
-		else
-			throw "out of bound access";
+		return a[Utils.safe(base_i + i, 0, a.length)];
 	}
 	public function set(i:Int, v:UInt):UInt {
-		return if (i >= 0 && i < a.length)
-			a[base_i + i] = v;
-		else
-			throw "out of bound access";
+		return a[Utils.safe(base_i + i, 0, a.length)] = v;
 	}
 	public function add(i:Int):UInt32ArrayPtr {
 		return new UInt32ArrayPtr(a, base_i + i);

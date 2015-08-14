@@ -24,6 +24,8 @@ class TestBase<T> extends TestCase {
 			aPtr[len()];
 			false;
 		} catch(e:Dynamic) true);
+
+		assertEquals(get(0), (aPtr+1)[-1]);
 	}
 
 	function testSet():Void {

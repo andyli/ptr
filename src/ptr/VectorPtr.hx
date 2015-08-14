@@ -14,16 +14,10 @@ class VectorPtr<T> implements IPtr<T> {
 		#end
 	}
 	public function get(i:Int):T {
-		return if (i >= 0 && i < a.length)
-			a[base_i + i];
-		else
-			throw "out of bound access";
+		return a[Utils.safe(base_i + i, 0, a.length)];
 	}
 	public function set(i:Int, v:T):T {
-		return if (i >= 0 && i < a.length)
-			a[base_i + i] = v;
-		else
-			throw "out of bound access";
+		return a[Utils.safe(base_i + i, 0, a.length)] = v;
 	}
 	public function add(i:Int):VectorPtr<T> {
 		return new VectorPtr<T>(a, base_i + i);
