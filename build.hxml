@@ -1,6 +1,7 @@
 -main Test
 -cp src
 -cp test
+-lib hx3compat
 -dce full
 
 --each

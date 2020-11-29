@@ -63,42 +63,42 @@ class Float32ArrayPtr implements IPtr<Float> {
 		return new Float32ArrayPtr(a, base_i);
 	}
 	inline public function lt(p:IConstPtr<Float>):Bool {
-		var p = Std.instance(p, Float32ArrayPtr);
+		var p = Std.downcast(p, Float32ArrayPtr);
 		return if (p == null || this.a != p.a)
 			throw "cannot compare pointers to different array";
 		else
 			this.base_i < p.base_i;
 	}
 	inline public function lte(p:IConstPtr<Float>):Bool {
-		var p = Std.instance(p, Float32ArrayPtr);
+		var p = Std.downcast(p, Float32ArrayPtr);
 		return if (p == null || this.a != p.a)
 			throw "cannot compare pointers to different array";
 		else
 			this.base_i <= p.base_i;
 	}
 	inline public function gt(p:IConstPtr<Float>):Bool {
-		var p = Std.instance(p, Float32ArrayPtr);
+		var p = Std.downcast(p, Float32ArrayPtr);
 		return if (p == null || this.a != p.a)
 			throw "cannot compare pointers to different array";
 		else
 			this.base_i > p.base_i;
 	}
 	inline public function gte(p:IConstPtr<Float>):Bool {
-		var p = Std.instance(p, Float32ArrayPtr);
+		var p = Std.downcast(p, Float32ArrayPtr);
 		return if (p == null || this.a != p.a)
 			throw "cannot compare pointers to different array";
 		else
 			this.base_i >= p.base_i;
 	}
 	inline public function eq(p:IConstPtr<Float>):Bool {
-		var p = Std.instance(p, Float32ArrayPtr);
+		var p = Std.downcast(p, Float32ArrayPtr);
 		return if (p == null || this.a != p.a)
 			throw "cannot compare pointers to different array";
 		else
 			this.base_i == p.base_i;
 	}
 	inline public function subPtr(p:IConstPtr<Float>):Int {
-		var p = Std.instance(p, Float32ArrayPtr);
+		var p = Std.downcast(p, Float32ArrayPtr);
 		return if (p == null || this.a != p.a)
 			throw "cannot compare pointers to different array";
 		else
